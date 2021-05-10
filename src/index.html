@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>PetsPaw</title>
+</head>
+
+<body>
+    <section class="container">
+        <!-- SVG templates -->
+        <svg width="30" height="30" viewBox="0 0 30 30" style="display: none;"
+            xmlns="http://www.w3.org/2000/svg" class="notice-sm notice-pos">
+            <path id="icon-like" fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15ZM15 2C7.8203 2 2 7.8203 2 15C2 22.1797 7.8203 28 15 28C22.1797 28 28 22.1797 28 15C28 7.8203 22.1797 2 15 2ZM10 12H8V10H10V12ZM22 12H20V10H22V12ZM9.2 16.6L9.8 17.4C12.4 20.8667 17.6 20.8667 20.2 17.4L20.8 16.6L22.4 17.8L21.8 18.6C18.4 23.1333 11.6 23.1333 8.2 18.6L7.6 17.8L9.2 16.6Z" />
+        </svg>
+        <svg width="30" height="26" viewBox="0 0 30 26" style="display: none;"
+            xmlns="http://www.w3.org/2000/svg" class="notice-sm notice-heart">
+            <path id="icon-favourite" fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.07107 2C4.71811 2 2 4.71811 2 8.07107C2 9.68122 2.63963 11.2254 3.77817 12.364L15 23.5858L26.2218 12.364C27.3604 11.2254 28 9.68121 28 8.07107C28 4.71811 25.2819 2 21.9289 2C20.3188 2 18.7746 2.63963 17.636 3.77817L15.7071 5.70711C15.3166 6.09763 14.6834 6.09763 14.2929 5.70711L12.364 3.77818C11.2254 2.63963 9.68121 2 8.07107 2ZM0 8.07107C0 3.61354 3.61354 0 8.07107 0C10.2116 0 12.2646 0.850343 13.7782 2.36396L15 3.58579L16.2218 2.36396C17.7354 0.850341 19.7884 0 21.9289 0C26.3865 0 30 3.61354 30 8.07107C30 10.2116 29.1497 12.2646 27.636 13.7782L15.7071 25.7071C15.3166 26.0976 14.6834 26.0976 14.2929 25.7071L2.36396 13.7782C0.850339 12.2646 0 10.2116 0 8.07107Z" />
+        </svg>
+        <svg width="30" height="30" viewBox="0 0 30 30" style="display: none;"
+            xmlns="http://www.w3.org/2000/svg">
+            <path id="icon-dislike" fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15ZM15 2C7.8203 2 2 7.8203 2 15C2 22.1797 7.8203 28 15 28C22.1797 28 28 22.1797 28 15C28 7.8203 22.1797 2 15 2ZM10 12H8V10H10V12ZM22 12H20V10H22V12ZM7.6 20.2L8.2 19.4C11.6 14.8667 18.4 14.8667 21.8 19.4L22.4 20.2L20.8 21.4L20.2 20.6C17.6 17.1333 12.4 17.1333 9.8 20.6L9.2 21.4L7.6 20.2Z" />
+        </svg>
+
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M7.84067 12.4577C7.84067 9.90778 9.90775 7.8407 12.4576 7.8407L19.3831 7.8407C21.9329 7.8407 24 9.90778 24 12.4577C24 15.0075 21.9329 17.0746 19.3831 17.0746H12.4576C9.90775 17.0746 7.84067 15.0075 7.84067 12.4577Z"
+                        fill="#FF868E" />
+                    <path
+                        d="M12.4576 24C9.90775 24 7.84067 21.9329 7.84067 19.383L7.84067 12.4576C7.84067 9.90772 9.90775 7.84063 12.4576 7.84063C15.0075 7.84063 17.0746 9.90772 17.0746 12.4576V19.383C17.0746 21.9329 15.0075 24 12.4576 24Z"
+                        fill="#FF868E" />
+                    <path
+                        d="M11.5424 2.8856C11.5424 4.47927 10.2505 5.7712 8.65678 5.7712C7.06311 5.7712 5.77118 4.47927 5.77118 2.8856C5.77118 1.29193 7.06311 0 8.65678 0C10.2505 0 11.5424 1.29193 11.5424 2.8856Z"
+                        fill="#FF868E" />
+                    <path
+                        d="M5.7712 16.7366C5.7712 18.3302 4.47927 19.6222 2.8856 19.6222C1.29193 19.6222 0 18.3302 0 16.7366C0 15.1429 1.29193 13.851 2.8856 13.851C4.47927 13.851 5.7712 15.1429 5.7712 16.7366Z"
+                        fill="#FF868E" />
+                    <path
+                        d="M19.6221 2.8856C19.6221 4.47927 18.3302 5.7712 16.7365 5.7712C15.1428 5.7712 13.8509 4.47927 13.8509 2.8856C13.8509 1.29193 15.1428 0 16.7365 0C18.3302 0 19.6221 1.29193 19.6221 2.8856Z"
+                        fill="#FF868E" />
+                    <path
+                        d="M5.7712 8.65684C5.7712 10.2505 4.47927 11.5424 2.8856 11.5424C1.29193 11.5424 0 10.2505 0 8.65684C0 7.06317 1.29193 5.77124 2.8856 5.77124C4.47927 5.77124 5.7712 7.06317 5.7712 8.65684Z"
+                        fill="#FF868E" />
+                </svg>
+                <svg width="73" height="13" viewBox="0 0 73 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.89444 12.8001L0.89444 0.435303L6.69284 0.435303C7.66564 0.435303 8.45924 0.620903 9.07364 0.992104C9.70084 1.3633 10.168 1.8689 10.4752 2.5089C10.7824 3.1489 10.936 3.8785 10.936 4.6977C10.936 5.5297 10.7568 6.2657 10.3984 6.9057C10.0528 7.5457 9.55364 8.0449 8.90084 8.4033C8.26084 8.7489 7.49924 8.9217 6.61604 8.9217H3.48644L3.48644 12.8001H0.89444ZM3.48644 6.8673H6.07844C6.82084 6.8673 7.37764 6.6753 7.74884 6.2913C8.13284 5.8945 8.32484 5.3633 8.32484 4.6977C8.32484 3.9809 8.14564 3.4369 7.78724 3.0657C7.42884 2.6817 6.89124 2.4897 6.17444 2.4897L3.48644 2.4897L3.48644 6.8673Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M17.1118 12.9921C15.5374 12.9921 14.2894 12.6017 13.3678 11.8209C12.4462 11.0273 11.9854 9.8305 11.9854 8.2305C11.9854 6.7841 12.3694 5.6385 13.1374 4.7937C13.9182 3.9361 15.0766 3.5073 16.6126 3.5073C18.0206 3.5073 19.0958 3.8785 19.8382 4.6209C20.5934 5.3505 20.971 6.3105 20.971 7.5009V9.1521L14.3854 9.1521C14.5262 9.8817 14.859 10.3809 15.3838 10.6497C15.9214 10.9185 16.6766 11.0529 17.6494 11.0529C18.1358 11.0529 18.6286 11.0081 19.1278 10.9185C19.6398 10.8289 20.075 10.7137 20.4334 10.5729V12.4161C20.011 12.6081 19.5182 12.7489 18.955 12.8385C18.3918 12.9409 17.7774 12.9921 17.1118 12.9921ZM14.3854 7.5585H18.7054V7.0593C18.7054 6.5345 18.5518 6.1249 18.2446 5.8305C17.9374 5.5233 17.419 5.3697 16.6894 5.3697C15.8318 5.3697 15.2302 5.5425 14.8846 5.8881C14.5518 6.2337 14.3854 6.7905 14.3854 7.5585Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M26.3853 12.9921C25.3357 12.9921 24.5549 12.7169 24.0429 12.1665C23.5437 11.6161 23.2941 10.8673 23.2941 9.9201V5.6961H22.0077V3.6993H23.2941V1.7409L25.8861 0.972903V3.6993H28.1901L28.0365 5.6961H25.8861V9.7473C25.8861 10.2465 26.0013 10.5921 26.2317 10.7841C26.4621 10.9633 26.8205 11.0529 27.3069 11.0529C27.6653 11.0529 28.0365 10.9889 28.4205 10.8609V12.6465C28.1389 12.7617 27.8317 12.8449 27.4989 12.8961C27.1661 12.9601 26.7949 12.9921 26.3853 12.9921Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M32.9571 12.9921C32.2787 12.9921 31.6323 12.9409 31.0179 12.8385C30.4035 12.7489 29.9107 12.6337 29.5395 12.4929V10.3425C29.9875 10.5217 30.4931 10.6625 31.0563 10.7649C31.6195 10.8545 32.1379 10.8993 32.6115 10.8993C33.2515 10.8993 33.6995 10.8609 33.9555 10.7841C34.2243 10.7073 34.3587 10.5345 34.3587 10.2657C34.3587 9.9585 34.1539 9.7345 33.7443 9.5937C33.3475 9.4529 32.7523 9.2545 31.9587 8.9985C31.1267 8.7169 30.4867 8.3777 30.0387 7.9809C29.5907 7.5841 29.3667 6.9953 29.3667 6.2145C29.3667 5.3441 29.6803 4.6785 30.3075 4.2177C30.9475 3.7441 31.9715 3.5073 33.3795 3.5073C33.9427 3.5073 34.4739 3.5521 34.9731 3.6417C35.4723 3.7185 35.8947 3.8145 36.2403 3.9297V6.0609C35.8947 5.8945 35.4979 5.7729 35.0499 5.6961C34.6019 5.6065 34.1859 5.5617 33.8019 5.5617C33.2515 5.5617 32.8099 5.6001 32.4771 5.6769C32.1571 5.7537 31.9971 5.9201 31.9971 6.1761C31.9971 6.4577 32.1699 6.6561 32.5155 6.7713C32.8739 6.8865 33.4243 7.0593 34.1667 7.2897C34.8963 7.5073 35.4659 7.7441 35.8755 8.0001C36.2851 8.2561 36.5731 8.5633 36.7395 8.9217C36.9059 9.2673 36.9891 9.7025 36.9891 10.2273C36.9891 12.0705 35.6451 12.9921 32.9571 12.9921Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M38.7882 12.8001V0.435303L44.5866 0.435303C45.5594 0.435303 46.353 0.620903 46.9674 0.992104C47.5946 1.3633 48.0618 1.8689 48.369 2.5089C48.6762 3.1489 48.8298 3.8785 48.8298 4.6977C48.8298 5.5297 48.6506 6.2657 48.2922 6.9057C47.9466 7.5457 47.4474 8.0449 46.7946 8.4033C46.1546 8.7489 45.393 8.9217 44.5098 8.9217H41.3802V12.8001H38.7882ZM41.3802 6.8673H43.9722C44.7146 6.8673 45.2714 6.6753 45.6426 6.2913C46.0266 5.8945 46.2186 5.3633 46.2186 4.6977C46.2186 3.9809 46.0394 3.4369 45.681 3.0657C45.3226 2.6817 44.785 2.4897 44.0682 2.4897H41.3802V6.8673Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M52.749 12.9921C52.173 12.9921 51.6354 12.8897 51.1362 12.6849C50.6498 12.4673 50.253 12.1537 49.9458 11.7441C49.6514 11.3217 49.5042 10.7969 49.5042 10.1697C49.5042 9.2737 49.8178 8.5569 50.445 8.0193C51.085 7.4817 52.0258 7.2129 53.2674 7.2129H55.9554V6.9633C55.9554 6.4001 55.7954 6.0033 55.4754 5.7729C55.1682 5.5425 54.541 5.4273 53.5938 5.4273C52.557 5.4273 51.5586 5.5873 50.5986 5.9073V4.0833C51.021 3.9169 51.533 3.7825 52.1346 3.6801C52.749 3.5649 53.4146 3.5073 54.1314 3.5073C55.501 3.5073 56.557 3.7889 57.2994 4.3521C58.0546 4.9025 58.4322 5.7921 58.4322 7.0209V12.8001H56.1858L56.0514 11.9745C55.693 12.2945 55.2514 12.5441 54.7266 12.7233C54.2018 12.9025 53.5426 12.9921 52.749 12.9921ZM53.4594 11.2833C54.0354 11.2833 54.5346 11.1873 54.957 10.9953C55.3794 10.8033 55.7122 10.5601 55.9554 10.2657V8.8257H53.325C52.3138 8.8257 51.8082 9.2417 51.8082 10.0737C51.8082 10.8801 52.3586 11.2833 53.4594 11.2833Z"
+                        fill="#1D1D1D" />
+                    <path
+                        d="M62.0479 12.8001L59.6479 3.6993L62.2399 3.6993L63.6223 9.6129L65.1391 4.8705V3.6993H67.1167L68.8447 9.6129L70.1887 3.6993H72.7615L70.3807 12.8001H67.9999L66.2527 7.4817L64.4671 12.8001H62.0479Z"
+                        fill="#1D1D1D" />
+                </svg>
+            </div>
+            <section class="welcome">
+                <section class="greeting">
+                    <h2>Hi intern!</h2>
+                    <p>Welcome to MSI 2021 Front-end test</p>
+                </section>
+                <section class="navigation">
+                    <h3>Lets srart using The Dogs API</h3>
+                    <nav class="options">
+                        <div class="voting-option">
+                            <div class="voting-bg">
+                                <img src="./imgs/vote-table.png" alt="vote-table" class="option-img">
+
+                            </div>
+                            <button class="voting-btn">VOTING</button>
+                        </div>
+                        <div class="breeds-option">
+                            <div class="breeds-bg">
+                                <img src="./imgs/pet-breeds.png" alt="pet-breeds" class="option-img">
+                            </div>
+                            <button class="breeds-btn">BREEDS</button>
+                        </div>
+                        <div class="gallery-option">
+                            <div class="gallery-bg">
+                                <img src="./imgs/images-search.png" alt="gallery-bg" class="option-img">
+
+                            </div>
+                            <button class="gallery-btn">GALLERY</button>
+                        </div>
+                    </nav>
+                </section>
+            </section>
+        </header>
+        <!-- content-voting content-breeds content-gallery -->
+        <main>
+            <div class="search-head">
+                <form class="search-group">
+                    <input type="text" placeholder="Search for breeds by name">
+                    <div class="btn-search">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg" class="sm-btn">
+                            <path
+                                d="M19.361 18.2168L14.601 13.2662C15.8249 11.8113 16.4954 9.98069 16.4954 8.07499C16.4954 3.62251 12.8729 0 8.42045 0C3.96797 0 0.345459 3.62251 0.345459 8.07499C0.345459 12.5275 3.96797 16.15 8.42045 16.15C10.092 16.15 11.6849 15.6458 13.0467 14.6888L17.8429 19.677C18.0434 19.8852 18.313 20 18.602 20C18.8755 20 19.1349 19.8957 19.3319 19.7061C19.7504 19.3034 19.7637 18.6357 19.361 18.2168ZM8.42045 2.10652C11.7115 2.10652 14.3889 4.78391 14.3889 8.07499C14.3889 11.3661 11.7115 14.0435 8.42045 14.0435C5.12937 14.0435 2.45198 11.3661 2.45198 8.07499C2.45198 4.78391 5.12937 2.10652 8.42045 2.10652Z" />
+                        </svg>
+                    </div>
+                </form>
+                <nav class="smiles-group">
+                    <div class="link-to-likes">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg" class="opt like-cnt">
+                            <use xlink:href="#icon-like"/>
+                        </svg>
+                    </div>
+                    <div class="link-to-favour">
+                        <svg width="30" height="26" viewBox="0 0 30 26" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg" class="opt heart-cnt">
+                            <use xlink:href="#icon-favourite"/>
+                        </svg>
+                    </div>
+                    <div class="link-to-dislikes">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg" class="opt dislike-cnt">
+                            <use xlink:href="#icon-dislike"/>
+                        </svg>
+                    </div>
+                </nav>
+            </div>
+            <section class="content">
+                <!-- HOME -->
+                <img src="./imgs/girl-and-pet.png" alt="girl-and-pet" class="girl-and-pet">
+                <!-- VOTING -->
+
+                <div class="panel-tegs">
+                    <div class="back">
+                        <svg width="12" height="20" viewBox="0 0 12 20" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg" class="sm-btn">
+                            <path
+                                d="M0.709811 10.9901L9.30951 19.5896C9.85651 20.1369 10.7435 20.1369 11.2903 19.5896C11.8371 19.0427 11.8371 18.1558 11.2903 17.6091L3.68086 9.99988L11.29 2.39096C11.8369 1.84391 11.8369 0.957107 11.29 0.410284C10.7432 -0.136761 9.85631 -0.136761 9.30931 0.410284L0.709591 9.00985C0.436171 9.28339 0.299622 9.64153 0.299622 9.99983C0.299622 10.3583 0.436441 10.7167 0.709811 10.9901Z" />
+                        </svg>
+                    </div>
+                    <!-- CHENGE BUTTON  breeds/gallery-->
+                    <button class="teg" id="teg-name">VOTING</button>
+                    <!-- adding upload btn for GALLERY part-->
+                    <button class="btn-upload">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="#FF868E"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.86601 0L12.2355 4.03339L11.4129 4.92452L8.48919 2.22567V12.3618H7.27645V2.30464L4.67336 4.90772L3.81583 4.05019L7.86601 0ZM1.21274 14.7873V7.51081H0V16H15.7656V7.51081H14.5529V14.7873H1.21274Z" />
+                        </svg>
+                        UPLOAD
+                    </button>
+                    <button class="teg tagId"></button>
+                    <div id="upload-image-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="btn-close">&times;</span>
+                            <h2>Upload a .jpg or .png Dog Image</h2>
+                            <p>Any uploads must comply with the <a href="#">upload guidelines</a> or face deletion.</p>
+                            <div class="upload-img-box">
+                                <p><b>Drag here</b> your file or <a href="#" class="btn-open-img">Click here</a> to upload</p>
+                                <input type="file" id="img-input-button" />
+                            </div>
+                            <p class="image-info">No file selected</p>
+                            <div class="btn-upload-img">UPLOAD PHOTO</div>
+                            <p class="upload-msg upload-success">Thanks for the Upload - Dog found!</p>
+                            <p class="upload-msg upload-failed">No Dog found - try a different</p>
+                        </div>
+                    </div>
+                    <!-- ADD INPUTs: SORT by breed, limit imgs on page, sort from Z to A, sort from A to Z -->
+                    <section class="sort-breeds">
+                        <select name="select-breed" id="select-breed">
+                            <option value="all">All breeds</option>
+
+                        </select>
+                        <select name="select-limit" id="select-limit">
+                            <option value="5">Limit: 5</option>
+                            <option value="10">Limit: 10</option>
+                            <option value="15">Limit: 15</option>
+                            <option value="20">Limit: 20</option>
+                        </select>
+                        <div class="sort-z-a">
+                            <svg width="19" height="20" viewBox="0 0 19 20" fill="#8C8C8C"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4 0.195262C4.26035 -0.0650874 4.68246 -0.0650874 4.94281 0.195262L8.94281 4.19526L8 5.13807L5.13807 2.27614V20H3.80474V2.27614L0.942809 5.13807L0 4.19526L4 0.195262ZM15.1381 1.33333C14.0335 1.33333 13.1381 2.22876 13.1381 3.33333V5.33333H17.1381V3.33333C17.1381 2.22876 16.2426 1.33333 15.1381 1.33333ZM17.1381 6.66667V9.33333H18.4714V3.33333C18.4714 1.49238 16.979 9.93411e-09 15.1381 9.93411e-09C13.2971 9.93411e-09 11.8047 1.49238 11.8047 3.33333V9.33333H13.1381V6.66667H17.1381ZM11.8047 10.6667H15.8047C17.2775 10.6667 18.4714 11.8606 18.4714 13.3333C18.4714 14.1298 18.1222 14.8447 17.5686 15.3333C18.1222 15.822 18.4714 16.5369 18.4714 17.3333C18.4714 18.8061 17.2775 20 15.8047 20H11.8047V10.6667ZM15.8047 14.6667C16.5411 14.6667 17.1381 14.0697 17.1381 13.3333C17.1381 12.597 16.5411 12 15.8047 12H13.1381V14.6667H15.8047ZM13.1381 16H15.8047C16.5411 16 17.1381 16.597 17.1381 17.3333C17.1381 18.0697 16.5411 18.6667 15.8047 18.6667H13.1381V16Z" />
+                            </svg>
+
+                        </div>
+                        <div class="sort-a-z">
+                            <svg width="19" height="20" viewBox="0 0 19 20" fill="#8C8C8C"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3.80474 17.7239V0H5.13807V17.7239L8 14.8619L8.94281 15.8047L4.94281 19.8047C4.81778 19.9298 4.64822 20 4.4714 20C4.29459 20 4.12502 19.9298 4 19.8047L0 15.8047L0.942809 14.8619L3.80474 17.7239ZM15.1381 1.33333C14.0335 1.33333 13.1381 2.22876 13.1381 3.33333V5.33333H17.1381V3.33333C17.1381 2.22876 16.2426 1.33333 15.1381 1.33333ZM17.1381 6.66667V9.33333H18.4714V3.33333C18.4714 1.49238 16.979 0 15.1381 0C13.2971 0 11.8047 1.49238 11.8047 3.33333V9.33333H13.1381V6.66667H17.1381ZM11.8047 10.6667H15.8047C17.2775 10.6667 18.4714 11.8606 18.4714 13.3333C18.4714 14.1298 18.1222 14.8447 17.5686 15.3333C18.1222 15.822 18.4714 16.5369 18.4714 17.3333C18.4714 18.8061 17.2775 20 15.8047 20H11.8047V10.6667ZM15.8047 14.6667C16.5411 14.6667 17.1381 14.0697 17.1381 13.3333C17.1381 12.597 16.5411 12 15.8047 12H13.1381V14.6667H15.8047ZM13.1381 16H15.8047C16.5411 16 17.1381 16.597 17.1381 17.3333C17.1381 18.0697 16.5411 18.6667 15.8047 18.6667H13.1381V16Z" />
+                            </svg>
+                        </div>
+                    </section>
+
+                    <!--GALLERY SORT -->
+                    <section class="sort-group-gallery">
+                        <div class="column-1">
+                            <label for="select-order">ORDER</label>
+                            <select name="select-order" id="select-order">
+                                <option value="random">Random</option>
+                                <option value="desc">Desc</option>
+                                <option value="asc">Asc</option>
+                            </select>
+                            <label for="select-breed">BREED</label>
+                            <select name="select-breed" id="select-breed">
+                                <option value="all">All breeds</option>
+                                <option value="1">breed 1</option>
+                                <option value="2">breed 2</option>
+                                <option value="3">breed 3</option>
+                                <option value="4">breed 4</option>
+                                <option value="5">breed 5</option>
+                            </select>
+                        </div>
+                        <div class="column-2">
+                            <label for="select-type">TYPE</label>
+                            <select name="select-type" id="select-type">
+                                <option value="jpg,png,gif">All</option>
+                                <option value="jpg,png">Static</option>
+                                <option value="gif">Animated</option>
+                            </select>
+
+                            <div class="group-controls">
+                                <label for="select-limit">LIMIT</label>
+
+                                <select name="select-limit" id="select-limit">
+                                    <option value="5">Limit: 5</option>
+                                    <option value="10">Limit: 10</option>
+                                    <option value="15">Limit: 15</option>
+                                    <option value="20">Limit: 20</option>
+                                </select>
+
+
+                                <svg id="btn-reload" width="18" height="20" viewBox="0 0 18 20" fill="#FF868E"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.48189 2.49989L6.93396 0.953004L7.88633 0L11.0577 3.16928L7.88634 6.33873L6.93395 5.38576L8.47232 3.84832C4.51244 3.99813 1.3473 7.25498 1.3473 11.2478C1.3473 15.3361 4.66547 18.6527 8.75744 18.6527C12.8494 18.6527 16.1676 15.3361 16.1676 11.2478V10.5742H17.5149V11.2478C17.5149 16.081 13.5927 20 8.75744 20C3.92221 20 0 16.081 0 11.2478C0 6.50682 3.77407 2.64542 8.48189 2.49989Z" />
+                                </svg>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+                <!-- For voting -->
+                <section class="voting-container">
+
+                    <section class="current-dog">
+                        <nav class="voiting-panel">
+                            <div class="like">
+                                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="green-smiley">
+                                    <use xlink:href="#icon-like"/>
+                                </svg>
+                            </div>
+                            <div class="favourite">
+                                <svg viewBox="0 0 30 26" xmlns="http://www.w3.org/2000/svg" class="red-smiley">
+                                    <use xlink:href="#icon-favourite"/>
+                                </svg>
+                            </div>
+                            <div class="dislike">
+                                <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" class="yellow-smiley">
+                                    <use xlink:href="#icon-dislike"/>
+                                </svg>
+                            </div>
+                        </nav>
+                    </section>
+                    <!--  -->
+                    <section class="notices">
+
+                    </section>
+                </section>
+
+                <!-- FOR BREED NEW SECTION WHITH IMGS/ need to hide previos content like notices,img-dog,voiting-panel-->
+                <section class="breeds-container">
+                    <!-- <section class="set-images">
+                        <div class="img-1">
+
+                        </div>
+                        <div class="img-2">
+
+                        </div>
+                        <div class="img-3">
+
+                        </div>
+                        <div class="img-4">
+
+                        </div>
+                        <div class="img-5">
+
+                        </div>
+                    </section> -->
+                </section>
+
+                <!-- GALLERY -->
+                <section class="gallery-container">
+                    <section class="set-images">
+                        <div class="img-1">
+
+                        </div>
+                        <div class="img-2">
+
+                        </div>
+                        <div class="img-3">
+
+                        </div>
+                        <div class="img-4">
+
+                        </div>
+                        <div class="img-5">
+
+                        </div>
+                    </section>
+                </section>
+
+                <section class="likes-dislikes-favourite-container">
+                    <div class="message">
+                        <p>No item found</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+    </section>
+</body>
+
+</html>
